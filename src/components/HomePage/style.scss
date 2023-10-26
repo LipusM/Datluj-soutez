@@ -1,0 +1,22 @@
+#intro-choose {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+
+    .chosen-game {
+        border: solid 2px black;
+        border-radius: 8px;
+
+        text-align: center;
+
+        width: 40%;
+        padding: 50px;
+
+        background-color: #8fb935;
+
+        text-decoration: none;
+        color: black;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}

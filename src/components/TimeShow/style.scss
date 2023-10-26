@@ -1,0 +1,26 @@
+#time-show{
+    margin: 25px 0px;
+
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    #restart-button{
+        transition: transform 500ms ease-in-out;
+        img{
+            height: 1rem;
+        }
+    }
+    /* .rotate {
+        transform: rotate(360deg);
+      } */
+
+    .not-rotate{
+        transform: rotate(-360deg);
+    }
+
+}
+  

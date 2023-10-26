@@ -1,0 +1,28 @@
+.stage__time {
+    text-align: center;
+    /* margin-bottom: 64px; */
+
+    display: flex;
+    justify-content: space-evenly;
+
+    /* border: solid 1px orange; */
+    .stage-time-selection{
+        border: solid 2px black;
+        border-radius: 8px;
+        width: 25%;
+    
+        background-color: #8fb935;
+    
+        &:hover{
+          cursor: pointer;
+        }
+      }
+      .active-button{
+        border: solid 2px #20201a;
+      }
+    
+      .non-active-button{
+        opacity: 0.5;
+        color: black;
+      }
+  }
