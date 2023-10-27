@@ -63,6 +63,9 @@ const generateWord = (size) => {
     //Stav pro statisku her
     const [stats, setStats] = useState([]);
 
+    //Stav určující vybraný čas hry
+    const [selectedTime, setSelectedTime] = useState(0);
+
 
     /***** Fce pro odstranění prvíno slova po napsání a generování nového na konec *****/
     const handleFinish = () => {
@@ -83,6 +86,8 @@ const generateWord = (size) => {
       setEvaluation({...evaluation, remaningTime: yourTime, activeButton: false})
 
       setEvaluation(prev => ({...prev, mistakes: 0, writtenWords: 0})) /********** **********/
+
+      setSelectedTime(yourTime/60) //Update vybraného času
     }
 
     /*****Fce resetující čas (resp. vrací do původního stavu)*****/
@@ -98,17 +103,20 @@ const generateWord = (size) => {
       c(`Mistakes: ${mistakes}, written words: ${writtenWords} and chosen time: ${remaningTime}`)
     } */
 
-    const [selectedTime, setSelectedTime] = useState(null);
+    /* const updateSelectedTime = (time) => {
+      setSelectedTime(time)
+    } */
 
     const games = (yourName) => {
-      const newStat = [{
+      const newStat = {
         name: yourName,
         mistakes: mistakes,
         writtenWords: writtenWords,
-        selectedTime: remaningTime,
-      }];
-      setStats((prevStats) => [...prevStats, newStat]);
-      setSubmission((prev) => !prev);
+        /* selectedTime: remaningTime, */
+        selectedTime: selectedTime,
+      };
+      setStats(prevStats => [...prevStats, newStat]);
+      setSubmission(prev => !prev);
       setPlayerValue(yourName);
       
       /* c(playerStats) */
@@ -136,7 +144,8 @@ const generateWord = (size) => {
   
     return (
       <div className="stage">
-        <TimeButtons theTime={chosenTime} setYourTime={startTimer} makeActive={activeButton} />
+        {/* <TimeButtons theTime={chosenTime} setYourTime={startTimer} makeActive={activeButton} chooseTime={updateSelectedTime}/> */}
+        <TimeButtons theTime={chosenTime} setYourTime={startTimer} makeActive={activeButton}/>
         <TimeShow timeLeft={remaningTime} restartTime={restartTimer}/>
 
         <div className="stage__mistakes">Chyb: {mistakes} | Napsaná slova: {writtenWords}</div>
