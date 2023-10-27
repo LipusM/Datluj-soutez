@@ -134,9 +134,11 @@ const generateWord = (size) => {
 
     const showStats = (games) => {
       games.map(game => {
+
         if (game && game.name && game.name.length > 0 && game.selectedTime > 0) {
           c(game)
         }
+        
       });
     }
 
