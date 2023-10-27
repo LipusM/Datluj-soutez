@@ -5,23 +5,24 @@ import { useState, useEffect } from "react";
 
 const PlayerName = ({ selectName }) => {
 
+  //Stav aktualizující hodnotu inputu, aby selectName měl pouze aktuální hodnotu
   const [inputValue, setInputValue] = useState("")
 
-  //Stav určující 
+  //Stav určující zdali je tlačítko neaktivní či aktivní 
   const [buttonActive, setButtonActive] = useState(true)
 
+  //Fce určujcí jeli tlačítko aktivní/neaktivní. Také aktualizuje stav inputu pro pozdější předání do rodi. komponenty.
   const submissionName = (name) => {
-
     setInputValue(name)
 
     if(name.length > 2){
       setButtonActive(false)
-      /* displaySubmission(name) */
     } else {
       setButtonActive(true)
     }
   }
 
+  //Fce posílající aktuální hodnotu inputu zpět do rodičovské komponenty StageTime
   const handleButtonClick = () => {
     selectName(inputValue)
   }
@@ -33,10 +34,8 @@ const PlayerName = ({ selectName }) => {
       </div>
       <div id="player-values">
         <input value={inputValue} 
-        /* onChange={e => inputValue = e.target.value}  */
         onChange={e => submissionName(e.target.value)} 
         type="text" placeholder="Vaše jméno" />
-        {/* <button disabled={buttonActive} onClick={() => selectName(inputValue)}>Uložte jméno</button> */}
         <button disabled={buttonActive} onClick={handleButtonClick}>Uložte jméno</button>
       </div>
     </div>
