@@ -125,7 +125,7 @@ const generateWord = (size) => {
     /* const showStats = (games) => {
 
       games.map(game => {
-        if((game.name).length > 0 && game.selectedTime > 0){
+        if(game.name.length > 0 && game.selectedTime > 0){
           c(game)
         }
       })
@@ -135,22 +135,16 @@ const generateWord = (size) => {
     const showStats = (games) => {
       games.map(game => {
         if (game && game.name && game.name.length > 0 && game.selectedTime > 0) {
-          console.log(game);
+          c(game)
         }
       });
     }
-    
 
     useEffect(() => {
-      
-      /* stats.map(game => {
-        if(game.selectedTime > 0 && game.selectedTime > 0){
-          c(game)
-        }
-      }) */
       showStats(stats)
-
     }, [stats])
+
+
 
     useEffect(() => {
       let interval
@@ -170,13 +164,12 @@ const generateWord = (size) => {
   
     return (
       <div className="stage">
-        {/* <TimeButtons theTime={chosenTime} setYourTime={startTimer} makeActive={activeButton} chooseTime={updateSelectedTime}/> */}
         <TimeButtons theTime={chosenTime} setYourTime={startTimer} makeActive={activeButton}/>
+
         <TimeShow timeLeft={remaningTime} restartTime={restartTimer}/>
 
-        <div className="stage__mistakes">Chyb: {mistakes} | Napsaná slova: {writtenWords}</div>
+        {/* <div className="stage__mistakes">Chyb: {mistakes} | Napsaná slova: {writtenWords}</div> */}
 
-        {/* {submission && <PlayerName selectName={games} inputValue={playerValue}/>} */}
         {submission && <PlayerName selectName={games}/>}
         <div className="stage__words">
           {words.map((word, index) => <WordboxTime key={word} word={word} onFinish={handleFinish} 
