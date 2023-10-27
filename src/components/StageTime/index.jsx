@@ -61,7 +61,7 @@ const generateWord = (size) => {
     const [playerValue, setPlayerValue] = useState("")
 
     //Stav pro statisku her
-    const [playerStats, setPlayerStats] = useState([]);
+    const [stats, setStats] = useState([]);
 
 
     /***** Fce pro odstranění prvíno slova po napsání a generování nového na konec *****/
@@ -100,14 +100,14 @@ const generateWord = (size) => {
 
     const [selectedTime, setSelectedTime] = useState(null);
 
-    const playerName = (yourName, selectedTime) => {
+    const games = (yourName) => {
       const newStat = [{
         name: yourName,
         mistakes: mistakes,
         writtenWords: writtenWords,
         selectedTime: remaningTime,
       }];
-      setPlayerStats((prevStats) => [...prevStats, newStat]);
+      setStats((prevStats) => [...prevStats, newStat]);
       setSubmission((prev) => !prev);
       setPlayerValue(yourName);
       
@@ -115,8 +115,8 @@ const generateWord = (size) => {
     }
 
     useEffect(() => {
-      c(playerStats)
-    }, [playerStats])
+      c(stats)
+    }, [stats])
 
     useEffect(() => {
       let interval
@@ -128,7 +128,7 @@ const generateWord = (size) => {
       } else {
         setWords([generateWord().slice(0, 6), generateWord().slice(0, 6), generateWord().slice(0, 6)])
         setEvaluation(prevEvaluation => ({...prevEvaluation, activeButton: true}));
-        playerName()
+        games()
       }
     
       return () => clearInterval(interval); // Odpojení časovače
@@ -141,7 +141,8 @@ const generateWord = (size) => {
 
         <div className="stage__mistakes">Chyb: {mistakes} | Napsaná slova: {writtenWords}</div>
 
-        {submission && <PlayerName displaySubmission={playerName} inputValue={playerValue}/>}
+        {/* {submission && <PlayerName selectName={games} inputValue={playerValue}/>} */}
+        {submission && <PlayerName selectName={games}/>}
         <div className="stage__words">
           {words.map((word, index) => <WordboxTime key={word} word={word} onFinish={handleFinish} 
           active={index === 0 && remaningTime !==0 && true} evaluate={onEvaluation} 
