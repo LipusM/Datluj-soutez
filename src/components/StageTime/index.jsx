@@ -122,8 +122,34 @@ const generateWord = (size) => {
       /* c(playerStats) */
     }
 
+    /* const showStats = (games) => {
+
+      games.map(game => {
+        if((game.name).length > 0 && game.selectedTime > 0){
+          c(game)
+        }
+      })
+
+    } */
+
+    const showStats = (games) => {
+      games.map(game => {
+        if (game && game.name && game.name.length > 0 && game.selectedTime > 0) {
+          console.log(game);
+        }
+      });
+    }
+    
+
     useEffect(() => {
-      c(stats)
+      
+      /* stats.map(game => {
+        if(game.selectedTime > 0 && game.selectedTime > 0){
+          c(game)
+        }
+      }) */
+      showStats(stats)
+
     }, [stats])
 
     useEffect(() => {
