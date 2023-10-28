@@ -66,6 +66,9 @@ const generateWord = (size) => {
     //Stav určující vybraný čas hry
     const [selectedTime, setSelectedTime] = useState(0);
 
+    //Stav pro ukládání her, které se poté ukládájí do local storage
+    const [displayedGames, setDisplayedGames] = useState([]);
+
 
     /***** Fce pro odstranění prvíno slova po napsání a generování nového na konec *****/
     const handleFinish = () => {
@@ -118,36 +121,39 @@ const generateWord = (size) => {
       setStats(prevStats => [...prevStats, newStat]);
       setSubmission(prev => !prev);
       setPlayerValue(yourName);
-      
-      /* c(playerStats) */
     }
 
-    /* const showStats = (games) => {
+
+
+
+    /*****Fce procházející hry*****/
+    const showStats = (games) => {
 
       games.map(game => {
-        if(game.name.length > 0 && game.selectedTime > 0){
-          c(game)
+        if (game && game.name && game.name.length > 0 && game.selectedTime > 0) { //Ať proměnná game existuje, jestli má klíč name, délka klíče name. Vybraný čas nad 0s
+          if (!displayedGames.some(displayedGame => displayedGame.name === game.name)) { //Existuje-li hra se stejným jménem, nebude uložena.
+            setDisplayedGames(prevGames => [...prevGames, game])
+          }
         }
       })
 
-    } */
-
-    const showStats = (games) => {
-      games.map(game => {
-
-        if (game && game.name && game.name.length > 0 && game.selectedTime > 0) {
-          c(game)
-        }
-        
-      });
     }
+    
+    
 
+    //Ať je celková statistika vždy aktuální
+    useEffect(() => {
+      c(displayedGames)
+    },[displayedGames])
+    
+
+    //Ať je průběžná statistika vždy aktuální
     useEffect(() => {
       showStats(stats)
     }, [stats])
 
 
-
+    /*****Fce spouštějící časovač hry, znovu generování slov, ukládání napsaných slov a chyb*****/
     useEffect(() => {
       let interval
           
