@@ -11,25 +11,22 @@ const StatisticTime = () => {
   useEffect(() => {
     const loadedGames = JSON.parse(localStorage.getItem("theGames"));
 
-    if (loadedGames) {
+    /* if (loadedGames) { */
       setTheGames(loadedGames);
-    }
+    /* } */
   }, []);
 
   return (
     <div id="stage">
 
-
-
-{theGames.map((game, index) => (
-  <div key={index}>
-    <p>Name: {game.name}</p>
-    <p>Mistakes: {game.mistakes}</p>
-    <p>Written Words: {game.writtenWords}</p>
-    <p>Selected Time: {game.selectedTime}</p>
-  </div>
-))}
-
+      {theGames.map((game, index) => (
+        <div key={index}>
+          <p>Name: {game.name}</p>
+          <p>Mistakes: {game.mistakes}</p>
+          <p>Written Words: {game.writtenWords}</p>
+          <p>Selected Time: {game.selectedTime}</p>
+        </div>
+      ))}
 
       <nav id="nav-panel">
         <NavLink className="navigation" to="/hra-na-cas">
