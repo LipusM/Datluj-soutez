@@ -100,17 +100,6 @@ const generateWord = (size) => {
     }
 
     /*****Fce skrývající box pro jméno hráče poté, co se jméno uloží*****/
-    /* const playerName = (yourName) => {
-      setSubmission(prev => !prev)
-      setPlayerValue(yourName)
-      c(yourName)
-      c(`Mistakes: ${mistakes}, written words: ${writtenWords} and chosen time: ${remaningTime}`)
-    } */
-
-    /* const updateSelectedTime = (time) => {
-      setSelectedTime(time)
-    } */
-
     const games = (yourName) => {
       const newStat = {
         name: yourName,
@@ -144,7 +133,9 @@ const generateWord = (size) => {
 
     //Ať je celková statistika vždy aktuální
     useEffect(() => {
-      c(displayedGames)
+      if(displayedGames.length > 0){
+        c(displayedGames)
+      }
     },[displayedGames])
     
 
