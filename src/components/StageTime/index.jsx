@@ -68,7 +68,7 @@ const generateWord = (size) => {
     const [selectedTime, setSelectedTime] = useState(0);
 
     //Stav pro ukládání her, které se poté ukládájí do local storage
-    const [displayedGames, setDisplayedGames] = useState([]);
+    const [playedGames, setPlayedGames] = useState([]);
 
 
     /***** Fce pro odstranění prvíno slova po napsání a generování nového na konec *****/
@@ -121,8 +121,8 @@ const generateWord = (size) => {
 
       games.map(game => {
         if (game && game.name && game.name.length > 0 && game.selectedTime > 0) { //Ať proměnná game existuje, jestli má klíč name, délka klíče name. Vybraný čas nad 0s
-          if (!displayedGames.some(displayedGame => displayedGame.name === game.name)) { //Existuje-li hra se stejným jménem, nebude uložena.
-            setDisplayedGames(prevGames => [...prevGames, game])
+          if (!playedGames.some(playedGame => playedGame.name === game.name)) { //Existuje-li hra se stejným jménem, nebude uložena.
+            setPlayedGames(prevGames => [...prevGames, game])
           }
         }
       })
@@ -131,12 +131,12 @@ const generateWord = (size) => {
     
     
 
-    //Ať je celková statistika vždy aktuální
+    //Ať je celková statistika vždy aktuální a ukládání dat do localStorage
     useEffect(() => {
-      if(displayedGames.length > 0){ //Ať se nevypisuje pole, které nemá žádné objekty (takto to je na začátku).
-        c(displayedGames)
+      if(playedGames.length > 0){ //Ať se nevypisuje pole, které nemá žádné objekty (takto to je na začátku).
+        c(playedGames)
       }
-    },[displayedGames])
+    },[playedGames])
     
 
     //Ať je průběžná statistika vždy aktuální
