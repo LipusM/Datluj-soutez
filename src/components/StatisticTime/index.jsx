@@ -14,7 +14,7 @@ const StatisticTime = () => {
     /* if (loadedGames) { */
       setTheGames(loadedGames);
     /* } */
-  }, []);
+  }, [theGames]);
 
   return (
     <div id="stage">
