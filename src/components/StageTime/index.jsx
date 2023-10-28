@@ -135,7 +135,7 @@ const generateWord = (size) => {
     useEffect(() => {
       if(playedGames.length > 0){ //Ať se nevypisuje pole, které nemá žádné objekty (takto to je na začátku).
         c(playedGames)
-        localStorage.setItem("dataKey", JSON.stringify(playedGames)) //Ukládání do local storage
+        localStorage.setItem("theGames", JSON.stringify(playedGames)) //Ukládání do local storage
       }
     },[playedGames])
     
