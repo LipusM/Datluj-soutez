@@ -133,7 +133,7 @@ const generateWord = (size) => {
 
     //Ať je celková statistika vždy aktuální
     useEffect(() => {
-      if(displayedGames.length > 0){
+      if(displayedGames.length > 0){ //Ať se nevypisuje pole, které nemá žádné objekty (takto to je na začátku).
         c(displayedGames)
       }
     },[displayedGames])
