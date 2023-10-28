@@ -30,7 +30,7 @@ const PlayerName = ({ selectName }) => {
   return (
     <div id="player-name">
       <div>
-        <p>Minimálně tři znaky</p>
+        <p className="info-text">Minimálně tři znaky. Existuje-li hra se stejným jménem hráče, hra nebude uložena. Proto je nutná kontrola statistiky.</p>
       </div>
       <div id="player-values">
         <input value={inputValue} 

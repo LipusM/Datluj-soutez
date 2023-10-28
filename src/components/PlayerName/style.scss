@@ -37,6 +37,12 @@
         outline: none;
     }
 
+    .info-text{
+        text-align: justify;
+        width: 90%;
+        margin: auto;
+    }
+
     #player-values{
         display: flex;
         gap: 20px;
