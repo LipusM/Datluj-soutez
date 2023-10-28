@@ -6,7 +6,7 @@ const StatisticTime = () => {
 
     return (
         <>
-        
+            statistika!
         </>
     )
 

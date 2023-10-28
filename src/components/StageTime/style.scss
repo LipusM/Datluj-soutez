@@ -7,45 +7,30 @@
 
     position: relative;
 
-    /* border: solid 1px blue; */
-  }
-  
-  /* .stage__time {
-    text-align: center;
-    margin-bottom: 64px;
+    #nav-panel{
+      border: solid 2px black;
+      border-radius: 8px;
+      text-align: center;
+      background-color: #8fb935;
 
-    display: flex;
-    justify-content: space-evenly;
+      width: 25%;
+      margin: auto;
+      left: 0%;
+      right: 0%;
 
-    border: solid 1px orange;
-  }
-  
-  .stage-time-selection{
-    border: solid 2px black;
-    border-radius: 8px;
-    width: 25%;
-
-    background-color: #8fb935;
-
-    &:hover{
-      cursor: pointer;
+      position: absolute;
+      bottom: 5%;
+      
+      .navigation{
+        text-decoration: none;
+        color: black;
+      }
     }
-  } */
+  }
 
   .stage__words {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    /* margin: 50px 0px; */
-
-    /* border: solid 1px black; */
   }
-
-  /* .active-word{
-    border: solid 2px #20201a;
-  }
-
-  .non-active-word{
-    opacity: 0.5;
-  } */

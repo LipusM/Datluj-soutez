@@ -1,6 +1,7 @@
 const c = console.log.bind(document)
 
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import WordboxTime from '../WordboxTime';
 import TimeShow from '../TimeShow';
 import TimeButtons from '../TimeButtons';
@@ -184,6 +185,10 @@ const generateWord = (size) => {
           active={index === 0 && remaningTime !==0 && true} evaluate={onEvaluation} 
           firstWord={index === 0 && remaningTime > 0 ? "active-word" : "non-active-word"} timeLeft={remaningTime}/>)}
         </div>
+
+        <nav id="nav-panel">
+          <NavLink className="navigation" to="/hra-na-cas/statistika">Statistika</NavLink>
+        </nav>
       </div>
     );
   };
