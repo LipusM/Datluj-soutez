@@ -68,7 +68,11 @@ const generateWord = (size) => {
     const [selectedTime, setSelectedTime] = useState(0);
 
     //Stav pro ukládání her, které se poté ukládájí do local storage
-    const [playedGames, setPlayedGames] = useState([]);
+    /* const [playedGames, setPlayedGames] = useState([]); */
+    const [playedGames, setPlayedGames] = useState(() => {
+      const savedGames = JSON.parse(localStorage.getItem("theGames"));
+      return savedGames || []; //Vrať savedGames pokud existuje (resp. jsou v local storage uložená data) nebo prádzné pole.
+    });
 
 
     /***** Fce pro odstranění prvíno slova po napsání a generování nového na konec *****/
