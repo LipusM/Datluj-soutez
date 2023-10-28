@@ -19,22 +19,24 @@ const WordboxTime = ({ word, onFinish, active, evaluate, firstWord, timeLeft}) =
 
   //Fce smazavající písemna a nahrazující slovo po jeho napsání
   const handleWord = (e) => {
-    if(e.key === lettersLeft){
-      onFinish()
-      evaluate(0, 1) //Počet napsaných slov se zvýšil o +1
-
-      active = true
-    }
-    else if(e.key === lettersLeft[0]){
-      setLettersLeft(prev => prev.slice(1))
-      setMistake(false)
-
-      active = true
-    } else {
-      setMistake(true)
-
-      active = false
-      evaluate(1, 0) //Počet chyb se zvýšil o +1
+    if(active){
+      if(e.key === lettersLeft){
+        onFinish()
+        evaluate(0, 1) //Počet napsaných slov se zvýšil o +1
+  
+        active = true
+      }
+      else if(e.key === lettersLeft[0]){
+        setLettersLeft(prev => prev.slice(1))
+        setMistake(false)
+  
+        active = true
+      } else {
+        setMistake(true)
+  
+        active = false
+        evaluate(1, 0) //Počet chyb se zvýšil o +1
+      }
     }
   }
   

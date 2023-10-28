@@ -138,7 +138,6 @@ const generateWord = (size) => {
         localStorage.setItem("theGames", JSON.stringify(playedGames)) //Ukládání do local storage
       }
     },[playedGames])
-    
 
     //Ať je průběžná statistika vždy aktuální
     useEffect(() => {
