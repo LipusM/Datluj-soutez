@@ -1,0 +1,29 @@
+#stage{
+    height: 340px;
+    padding: 32px;
+    margin: 32px auto;
+    background-color: #efefef;
+    border-radius: 8px;
+
+    position: relative;
+
+    #nav-panel{
+        border: solid 2px black;
+        border-radius: 8px;
+        text-align: center;
+        background-color: #8fb935;
+  
+        width: 25%;
+        margin: auto;
+        left: 0%;
+        right: 0%;
+  
+        position: absolute;
+        bottom: 5%;
+        
+        .navigation{
+          text-decoration: none;
+          color: black;
+        }
+      }
+}
