@@ -9,19 +9,25 @@
 
     overflow: scroll;
 
+    table, tr, th, td{
+      border: solid 1px black;
+      text-align: center;
+    }
+
+    table{
+      margin: auto;
+      width: 75%;
+      margin-bottom: 20px;
+    }
+
     #nav-panel{
-        border: solid 2px black;
-        border-radius: 8px;
         text-align: center;
-        background-color: #8fb935;
   
-        width: 25%;
         margin: auto;
-        left: 0%;
-        right: 0%;
+        left: 2%;
   
-        position: sticky;
-        bottom: 0%;
+        position: absolute;
+        top: 2%;
         
         .navigation{
           text-decoration: none;
