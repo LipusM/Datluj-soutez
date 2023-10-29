@@ -175,6 +175,7 @@ const generateWord = (size) => {
         {/* <div className="stage__mistakes">Chyb: {mistakes} | Napsaná slova: {writtenWords}</div> */}
 
         {submission && <PlayerName selectName={games}/>}
+        
         <div className="stage__words">
           {words.map((word, index) => <WordboxTime key={word} word={word} onFinish={handleFinish} 
           active={index === 0 && remaningTime !==0 && true} evaluate={onEvaluation} 
@@ -183,6 +184,7 @@ const generateWord = (size) => {
 
         <nav id="nav-panel">
           <NavLink className="navigation" to="/hra-na-cas/statistika">Statistika</NavLink>
+          <NavLink className="navigation" to="/hra-na-cas/pravidla">Pravidla</NavLink>
         </nav>
       </div>
     );
