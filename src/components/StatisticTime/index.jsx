@@ -3,6 +3,8 @@ const c = console.log.bind(document);
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import previousPage from "../../assets/arrow-back.svg"
+
 import "./style.scss";
 
 const StatisticTime = () => {
@@ -100,7 +102,7 @@ const StatisticTime = () => {
 
       <nav id="nav-panel">
         <NavLink className="navigation" to="/hra-na-cas">
-          Zpět
+          <img src={previousPage} alt="" />
         </NavLink>
       </nav>
     </div>
