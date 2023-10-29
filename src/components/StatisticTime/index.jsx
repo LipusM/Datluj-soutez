@@ -18,32 +18,84 @@ const StatisticTime = () => {
 
   return (
     <div id="stage">
-      {/* {theGames.map((game, index) => (
-        <div key={index}>
-          <p>Name: {game.name}</p>
-          <p>Mistakes: {game.mistakes}</p>
-          <p>Written Words: {game.writtenWords}</p>
-          <p>Selected Time: {game.selectedTime}</p>
-        </div>
-      ))} */}
+
+      {/* Tabulka pro hru s časem 1 minuta */}
       <table>
-      <tr>
-    <th>Company</th>
-    <th>Contact</th>
-    <th>Country</th>
-  </tr>
-      {theGames.map((game) => {
-        if (game.selectedTime === 1) {
-          
-            return( 
-              <tr key={game.name}>
+        <tbody>
+          <tr>
+            <th colSpan={3}>
+              Hra s časem 1 minuta
+            </th>
+          </tr>
+          <tr>
+            <th>Hráč</th>
+            <th>Napsaná slova</th>
+            <th>Počet chyb</th>
+          </tr>
+        </tbody>
+        {theGames
+          .filter((game) => game.selectedTime === 1) // Filtrujeme pouze hry s vybraným časem 1
+          .map((game, index) => (
+            <tbody key={index}>
+              <tr>
                 <td>{game.name}</td>
                 <td>{game.writtenWords}</td>
                 <td>{game.mistakes}</td>
-              </tr>)
-            
-        }
-      })}
+              </tr>
+            </tbody>
+          ))}
+      </table>
+
+      <table>
+        <tbody>
+          <tr>
+            <th colSpan={3}>
+              Hra s časem 2 minuty
+            </th>
+          </tr>
+          <tr>
+            <th>Hráč</th>
+            <th>Napsaná slova</th>
+            <th>Počet chyb</th>
+          </tr>
+        </tbody>
+        {theGames
+          .filter((game) => game.selectedTime === 2) // Filtrujeme pouze hry s vybraným časem 2
+          .map((game, index) => (
+            <tbody key={index}>
+              <tr>
+                <td>{game.name}</td>
+                <td>{game.writtenWords}</td>
+                <td>{game.mistakes}</td>
+              </tr>
+            </tbody>
+          ))}
+      </table>
+
+      <table>
+        <tbody>
+          <tr>
+            <th colSpan={3}>
+              Hra s časem 3 minuty
+            </th>
+          </tr>
+          <tr>
+            <th>Hráč</th>
+            <th>Napsaná slova</th>
+            <th>Počet chyb</th>
+          </tr>
+        </tbody>
+        {theGames
+          .filter((game) => game.selectedTime === 3) // Filtrujeme pouze hry s vybraným časem 3
+          .map((game, index) => (
+            <tbody key={index}>
+              <tr>
+                <td>{game.name}</td>
+                <td>{game.writtenWords}</td>
+                <td>{game.mistakes}</td>
+              </tr>
+            </tbody>
+          ))}
       </table>
 
       <nav id="nav-panel">
