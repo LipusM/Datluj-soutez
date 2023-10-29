@@ -28,7 +28,7 @@ const TimeGameRules = () => {
                             <img src={refreshButton}/> a hra bude ukončena.
                         </li>
                         <li>
-                        Na konci hry se objeví okno pro jméno hráče. Minimální délka jména je 3 znaky. Klikem na odkstaz STATISTIKA uvidíme statistiku her.
+                        Na konci hry se objeví okno pro jméno hráče. Minimální délka jména je 3 znaky. Klikem na odkstaz STATISTIKA uvidíte statistiku her.
                         </li>
                     </ol>
                 </div>
