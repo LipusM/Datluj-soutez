@@ -1,0 +1,48 @@
+#time-game-rules{
+    height: 340px;
+    padding: 32px;
+    margin: 32px auto;
+    background-color: #efefef;
+    border-radius: 8px;
+
+    position: relative;
+
+    #game-rules{
+        width: 75%;
+        margin: auto;
+
+        h3{
+            text-align: center;
+        }
+
+        img{
+            height: 1rem;
+            margin: 0 0 0 5px;
+        }
+
+        .rules{
+            text-align: justify;
+            margin: auto;
+            padding: 0 10px;
+        }
+
+        #nav-panel{
+            text-align: center;
+      
+            margin: auto;
+            left: 2%;
+      
+            position: absolute;
+            top: 2%;
+    
+            img{
+              height: 2rem;
+            }
+            
+            .navigation{
+              text-decoration: none;
+              color: black;
+            }
+          }
+    }
+}

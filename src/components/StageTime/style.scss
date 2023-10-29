@@ -8,10 +8,7 @@
     position: relative;
 
     #nav-panel{
-      /* border: solid 2px black; */
-      /* border-radius: 8px; */
       text-align: center;
-      /* background-color: #8fb935; */
 
       width: 25%;
       margin: auto;
@@ -20,6 +17,9 @@
 
       position: absolute;
       bottom: 5%;
+
+      display: flex;
+      justify-content: space-between;
       
       .navigation{
         text-decoration: none;
