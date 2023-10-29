@@ -1,30 +1,29 @@
+$background-color: #efefef;
+$border-radius: 8px;
+$active-word-border: 2px solid #20201a;
+
 .stage {
-    height: 340px;
-    padding: 32px;
-    margin: 32px auto;
-    background-color: #efefef;
-    border-radius: 8px;
+  height: 340px;
+  padding: 32px;
+  margin: 32px auto;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  position: relative;
 
-    position: relative;
+  #nav-panel {
+    text-align: center;
+    width: 25%;
+    margin: auto;
+    left: 0%;
+    right: 0%;
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    justify-content: space-between;
 
-    #nav-panel{
-      text-align: center;
-
-      width: 25%;
-      margin: auto;
-      left: 0%;
-      right: 0%;
-
-      position: absolute;
-      bottom: 5%;
-
-      display: flex;
-      justify-content: space-between;
-      
-      .navigation{
-        text-decoration: none;
-        color: black;
-      }
+    .navigation {
+      text-decoration: none;
+      color: black;
     }
   }
 
@@ -34,3 +33,12 @@
     flex-wrap: wrap;
     align-items: center;
   }
+  
+  .active-word {
+    border: $active-word-border;
+  }
+
+  .non-active-word {
+    opacity: 0.5;
+  }
+}

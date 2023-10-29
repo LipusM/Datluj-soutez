@@ -57,7 +57,7 @@ const WordboxTime = ({ word, onFinish, active, evaluate, firstWord, timeLeft}) =
 
 
   return (
-    <div className={classnames("wordbox", firstWord, {"wordbox--mistake": mistake})} >
+    <div className={classnames("wordbox-time", firstWord, {"wordbox--mistake": mistake})} >
       {lettersLeft}
     </div>
   )

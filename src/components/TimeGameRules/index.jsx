@@ -9,9 +9,9 @@ import "./style.scss"
 
 const TimeGameRules = () => {
     return (
-        <div id="time-game-rules">
-            <div id="game-rules">
-            <nav id="nav-panel">
+        <div className="time-game-rules">
+            <div className="game-rules">
+            <nav className="nav-panel">
                     <NavLink to="/hra-na-cas">
                         <img className="navigation" src={previousPage} alt="" />
                     </NavLink>
@@ -24,6 +24,7 @@ const TimeGameRules = () => {
                         </li>
                         <li>Vyberte časové omezení na 1, 2 nebo 3 minuty.</li>
                         <li>Po spuštění hry uvidíte odpočítávání.</li>
+                        <li>Při chybně napsaném písmenku slova je slovo červeně zvýrazněno.</li>
                         <li>V průběhu hry nelze zvolit jiný čas. Hru lze předčasně ukončit klikem na 
                             <img src={refreshButton}/> a hra bude ukončena.
                         </li>

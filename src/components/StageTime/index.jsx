@@ -172,8 +172,6 @@ const generateWord = (size) => {
 
         <TimeShow timeLeft={remaningTime} restartTime={restartTimer}/>
 
-        {/* <div className="stage__mistakes">Chyb: {mistakes} | Napsaná slova: {writtenWords}</div> */}
-
         {submission && <PlayerName selectName={games}/>}
         
         <div className="stage__words">

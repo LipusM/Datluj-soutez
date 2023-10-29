@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Wordbox from '../Wordbox';
 import wordList from '../../word-list';
 
+import { NavLink } from 'react-router-dom';
+
 import './style.scss'
 
 const generateWord = (size) => {
@@ -42,12 +44,16 @@ const generateWord = (size) => {
     }
   
     return (
-      <div className="stage">
+      <div className="stage-no-time">
         <div className="stage__mistakes">Chyb: {mistakes} | Napsaná slova: {writtenWords}</div>
         <div className="stage__words">
           {words.map((word, index) => <Wordbox key={word} word={word} onFinish={handleFinish} 
           active={index === 0 && true} evaluate={onEvaluation} firstWord={index === 0 ? "active-word" : "non-active-word"}/>)}
         </div>
+
+        <nav id="nav-panel">
+          <NavLink className="navigation" to="/hra/pravidla">Pravidla</NavLink>
+        </nav>
       </div>
     );
   };

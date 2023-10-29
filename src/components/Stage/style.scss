@@ -1,16 +1,35 @@
-.stage {
-    height: 340px;
-    padding: 32px;
-    margin: 32px auto;
-    background-color: #efefef;
-    border-radius: 8px;
+$background-color: #efefef;
+$border-radius: 8px;
+$active-word-border: 2px solid #20201a;
+
+.stage-no-time {
+  height: 340px;
+  padding: 32px;
+  margin: 32px auto;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  position: relative;
+
+  #nav-panel {
+    text-align: center;
+    width: 25%;
+    margin: auto;
+    left: 0%;
+    right: 0%;
+    position: absolute;
+    bottom: 5%;
+
+    .navigation {
+      text-decoration: none;
+      color: black;
+    }
   }
-  
+
   .stage__mistakes {
     text-align: center;
     margin-bottom: 64px;
   }
-  
+
   .stage__words {
     display: flex;
     justify-content: center;
@@ -18,10 +37,11 @@
     align-items: center;
   }
 
-  .active-word{
-    border: solid 2px #20201a;
+  .active-word {
+    border: $active-word-border;
   }
 
-  .non-active-word{
+  .non-active-word {
     opacity: 0.5;
   }
+}
