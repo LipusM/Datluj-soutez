@@ -21,6 +21,7 @@ const GameRules = () => {
                         </li>
                         <li>Při chybně napsaném písmenku slova je slovo červeně zvýrazněno.</li>
                         <li>Na obrazovce lze vidět počet napsaných slov a chyb.</li>
+                        <li>Chete-li začít znovu, refreshněte stránku.</li>
                     </ol>
                 </div>
             </div>
