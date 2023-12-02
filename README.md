@@ -1,4 +1,4 @@
-## Datluj.cz
+## Datluj.cz (CZ)
 
 <details>
   <summary><b>Detail</b></summary>
@@ -67,7 +67,7 @@ V této chvíli věříme, že jste dostatečně zkušení na to, aby vám popis
 
 </details>
 
-## Datluj.cz
+## Datluj.cz (EN)
 
 <details>
   <summary><b>Detail</b></summary>
