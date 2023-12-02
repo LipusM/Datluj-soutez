@@ -4,7 +4,7 @@
   <summary><b>Detail</b></summary>
 
   **Jedná se projekt v průběhu kurzu React2. Slouží k zopakování zopakování doposud získaných znalostí.**
-  **K záležitostem, které jsou nad rámec zadání nebyl žáden postup. Jejich vytvoření bylo postaveno na dobrovolné bázi.**
+  **K záležitostem, které jsou nad rámec zadání nebyl žáden postup. Jejich vytvoření bylo postaveno na dobrovolné bázi. Respektive bylo pouze písemné zadání.**
   **Je postaven na Vite balíčku.**
   
   Pro spuštění projektu stačí v terminálu zadat příkaz:
@@ -72,28 +72,19 @@ V této chvíli věříme, že jste dostatečně zkušení na to, aby vám popis
 <details>
   <summary><b>Detail</b></summary>
 
-   **This is project was at the beginning of the React2 course. It is used to review the knowledge from the React1 course created by Czechitas.**
-   **For the project Vite package is used.**
+   **This is a project during the React2 course. It is used to review the knowledge gained so far.**
+   **For the features which are not part of the original assignment no procedure was created. Their creation was based on a voluntary basis. There was only a written assignment.**
 
-   To start the project, just enter the following command in the terminal:
-   **npm run dev**
+   To start the project, just enter the following command in the terminal: **npm run dev**
 
-   The address is then displayed in the terminal. To view it in the browser, you must hold **ctrl/cmd** while clicking on it.
+   The address is then displayed in the terminal. To view it in the browser, you must hold ctrl/cmd while clicking on it.
 
-   Assignment:
-   Make a simple e-shop in React for the new furniture chain XXXMuck. The website will consist of two pages: products offer and product detail.
-
-  1. Use **npm init kodim-app@latest** xxxmuck to create the basic structure of the web application.
-  2. Review the [main page design](https://kodim.cz/cms/assets/vyvoj-webu/react-2/lekce/opakovani/projektik/xxxmuck/homepage.png) of the store. You don't have to follow it exactly, just take it as inspiration. Before you start coding, break down the structure of the page into clearly named components. Let the home page be contained entirely in the **HomePage** component.
-  3. Study the output of the following [API endpoint](https://apps.kodim.cz/react-2/xxxmuck/products), which returns a list of products in JSON format.
-  4. Create the individual components and build the resulting page from them. Retrieve the data for each product from the API.
-  5. Use the **npm install react-router-dom** command to install React Router.
-  6. Add routing to your project. The **HomePage** component will have the path **/**.
-  7. Create an empty **ProductPage** component and have it under the **/product** path.
-  8. Complete the **ProductPage** component according to the [provided design](https://kodim.cz/cms/assets/vyvoj-webu/react-2/lekce/opakovani/projektik/xxxmuck/productpage.png).
-  9. When you click on a product on the main page, the **ProductPage** will be displayed without the product yet.
-  10. Display the selected product on the **ProductPage**. To do this, you need to pass the **id** of the product in the URL of the page and use the **useParams** hook. You can find individual products under their **id** at [this endpoint](https://apps.kodim.cz/react-2/xxxmuck/products/2c6VoCaD). The ordering button will not work yet.
-   
+   **Part 1:**
+   1. Make a fork of [repository](https://github.com/Czechitas-podklady-WEB/datluj.cz) with the entire project. Install the dependencies and look at the project structure. When you start the page, you will see one word rendered on the screen using the **Wordbox** component.
+  2. Study the source code and familiarize yourself with how the application works.
+  3. Review the **Stage** component. Ignore the **generateWord** function for now, we have that ready for later. In the component state, we don't just store a single string but a whole array of words. This is also a preparation for later. Until we say otherwise, we will work with a single element array.
+  4. Modify the **Wordbox** component by hanging the **keyUp** event listener on **document**. If the user typed the first letter of the word correctly, delete that letter from the word. Continue this until the user has typed the entire word. You will be using the **lettersLeft** state in the listener and will need to avoid obsoleting it (stale state). Use the discussed technique of changing the event listener by itself. You will need to add the **lettersLeft** state to the **useEffect** dependencies.
+  5. Once the user has correctly typed a complete word, the **Wordbox** component will be left hanging on the page empty. Leave it hanging for now.
 
 </details>
 
