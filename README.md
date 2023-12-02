@@ -4,6 +4,7 @@
   <summary><b>Detail</b></summary>
 
   **Jedná se projekt v průběhu kurzu React2. Slouží k zopakování zopakování doposud získaných znalostí.**
+  **K záležitostem, které jsou nad rámec zadání nebyl žáden postup. Jejich vytvoření bylo postaveno na dobrovolné bázi.**
   **Je postaven na Vite balíčku.**
   
   Pro spuštění projektu stačí v terminálu zadat příkaz:
@@ -66,7 +67,7 @@ V této chvíli věříme, že jste dostatečně zkušení na to, aby vám popis
 
 </details>
 
-## Furniture XXXMuck
+## Datluj.cz
 
 <details>
   <summary><b>Detail</b></summary>
