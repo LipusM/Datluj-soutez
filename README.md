@@ -72,7 +72,7 @@ V této chvíli věříme, že jste dostatečně zkušení na to, aby vám popis
 <details>
   <summary><b>Detail</b></summary>
 
-   **This is a project during the React2 course. It is used to review the knowledge gained so far.**
+   **This is a project during the React2 course. It is used to review the knowledge.**
    **For the features which are not part of the original assignment no procedure was created. Their creation was based on a voluntary basis. There was only a written assignment.**
 
    To start the project, just enter the following command in the terminal: **npm run dev**
@@ -83,18 +83,18 @@ V této chvíli věříme, že jste dostatečně zkušení na to, aby vám popis
    1. Make a fork of [repository](https://github.com/Czechitas-podklady-WEB/datluj.cz) with the entire project. Install the dependencies and look at the project structure. When you start the page, you will see one word rendered on the screen using the **Wordbox** component.
   2. Study the source code and familiarize yourself with how the application works.
   3. Review the **Stage** component. Ignore the **generateWord** function for now, we have that ready for later. In the component state, we don't just store a single string but a whole array of words. This is also a preparation for later. Until we say otherwise, we will work with a single element array.
-  4. Modify the **Wordbox** component by hanging the **keyUp** event listener on **document**. If the user typed the first letter of the word correctly, delete that letter from the word. Continue this until the user has typed the entire word. You will be using the **lettersLeft** state in the listener and will need to avoid obsoleting it (stale state). Use the discussed technique of changing the event listener by itself. You will need to add the **lettersLeft** state to the **useEffect** dependencies.
+  4. Modify the **Wordbox** component by hanging the **keyUp** event listener on **document**. If the user typed the first letter of the word correctly, delete that letter from the word. Continue with this until the user has typed the entire word. You will be using the **lettersLeft** state in the listener and will need to avoid obsoleting it (stale state). Use the discussed technique of changing the event listener by itself. You will need to add the **lettersLeft** state to the **useEffect** dependencies.
   5. Once the user has correctly typed a complete word, the **Wordbox** component will be left hanging on the page empty. Leave it hanging for now.
 
 **Part 2:**
-1. The **Wordbox** component must somehow inform its parent that the user has correctly spelled a word. To do this, add an **onFinish** callback to the props in the **Wordbox** component.
+1. The **Wordbox** component must somehow inform its parent component that the user has correctly spelled a word. To do this, add an **onFinish** callback to the props in the **Wordbox** component.
 2. In the **keyup** event listener, make it so that if the user has typed the last letter correctly, you call the **onFinish** function directly instead of setting the status.
-3. In the **Stage** component, make a **handleFinish** function that sets the state of **words** to an empty field. Pass this function to the **Wordbox** component. This will ensure _unmount_ of the component after the word is correctly typed.
+3. In the **Stage** component, make a **handleFinish** function that sets the state of **words** to an empty field. Pass this function to the **Wordbox** component. This technique will ensure of _unmounting_ of the component after the word is correctly typed.
 4. Instead of setting the state to an empty field, we can directly generate a new word - using the prepared function **generateWord**. Generate a word of length 6. Note, however, that you always need to set an array to the state, in this case an array of one element.
 5. Test that after typing a word, another one immediately comes up.
 
 **Part 3:**
-1. In the **Wordbox** component, create a new truth condition **[mistake, setMistake]** that tells if the user made a typo. Initially, the state will be set to **false**.
+1. In the **Wordbox** component, create a new boolean condition **[mistake, setMistake]** that tells if the user made a typo. Initially, the state will be set to **false**.
 2. If the **mistake** state is **true**, render the word with the **wordbox wordbox--mistake** class.
 3. In response to the **keyup** event, correctly set the **mistake** state to **true** or **false** depending on whether the user typed the correct letter.
 4. Test that the application is working correctly.
@@ -108,15 +108,15 @@ V této chvíli věříme, že jste dostatečně zkušení na to, aby vám popis
 5. Test that your application is working properly.
 
 **Part 5:**
-Let's add error counting to our dodgeball game. Whenever the **Wordbox** component detects an error, it will notify its parent and the parent will update its status.
+Let's add error counting to our educational game. Whenever the **Wordbox** component detects an error, it will notify its parent component and it will update its status.
 
 At this point, we trust that you are experienced enough that the description above is sufficient to complete the exercise. If you still feel unsure, you can follow the detailed description:
 
 1. Add a state **[mistakes, setMistakes]** with initial value **0** to the **Stage** component. Display the state at the appropriate location in the component.
-2. Add a **onMistake** callback to the **Wordbox** component to inform the **Stage** component of a typo.
+2. Add an **onMistake** callback to the **Wordbox** component to inform the **Stage** component of a typo.
 3. In the **Stage** component, create a **handleMistake** handler that increases the **mistake** state by one.
 4. In the **Wordbox** component, call the **onMistake** function every time an error occurs. This needs to be done in the **keyup** event handler. You can probably guess that we are in danger of deprecating _prop_ **onMistake** this way.
-5. In the **Wordbox** component, add _prop_ **onMistake** to the dependencies in **useEffect** so that we don't get obsolete.
+5. In the **Wordbox** component, add a _prop_ **onMistake** to the dependencies in **useEffect** so it we does not get obsolete.
 6. Test that the application is working properly.
 
 
